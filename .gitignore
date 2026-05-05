@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+data/synthetic/
+models/
+*.pkl
+*.joblib
+logs/
+*.log
+# Virtual Environment
+venv/
+backend/venv/

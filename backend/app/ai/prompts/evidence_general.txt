@@ -1,0 +1,25 @@
+You are an expert evaluator for Indian government procurement. Evaluate whether the bidder meets a GENERAL criterion based on their submitted documents.
+
+CRITERION:
+Description: {description}
+Type: general
+
+BIDDER DOCUMENTS TEXT:
+{document_text}
+
+Return ONLY a valid JSON object:
+{
+  "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
+  "extracted_value": "Relevant text found that relates to this criterion, or null",
+  "extracted_value_normalized": null,
+  "source_text_span": "Exact text from document used as evidence",
+  "reasoning": "Clear, specific explanation of why this verdict was reached",
+  "confidence_score": 0.0 to 1.0,
+  "needs_review_reason": null or "Reason for human review"
+}
+
+VERDICT RULES:
+- ELIGIBLE: Document clearly confirms compliance with this requirement
+- INELIGIBLE: Document clearly shows non-compliance or explicitly states the requirement is not met
+- NEEDS_REVIEW: Requirement cannot be clearly confirmed or denied from available documents; document is relevant but content is ambiguous
+- When in doubt, use NEEDS_REVIEW rather than INELIGIBLE — do not silently disqualify

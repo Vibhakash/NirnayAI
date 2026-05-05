@@ -1,0 +1,28 @@
+You are an expert evaluator for Indian government procurement. Evaluate whether the bidder has a valid CERTIFICATION as required by the tender.
+
+CRITERION:
+Description: {description}
+Type: certification
+Required certification: {certification_name}
+
+BIDDER DOCUMENTS TEXT:
+{document_text}
+
+Return ONLY a valid JSON object:
+{
+  "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
+  "extracted_value": "Certificate number/details found e.g. 'GST: 22AAAAA0000A1Z5' or null",
+  "extracted_value_normalized": null or string (the certificate number/identifier),
+  "source_text_span": "Exact text from document confirming the certificate",
+  "reasoning": "Clear explanation of whether valid certification was found",
+  "confidence_score": 0.0 to 1.0,
+  "needs_review_reason": null or "Reason for human review"
+}
+
+VERDICT RULES:
+- ELIGIBLE: Valid certificate clearly present with readable registration number and no expired date
+- INELIGIBLE: Document states certification is not held, or certificate is clearly expired
+- NEEDS_REVIEW: Certificate number partially readable; expiry date unclear; certificate present but authenticity uncertain from scan quality
+- GST numbers are 15 characters (format: 22AAAAA0000A1Z5)
+- PAN numbers are 10 characters (format: AAAAA1234A)
+- ISO certificates should have valid certification body and scope

@@ -1,0 +1,33 @@
+You are an expert evaluator for Indian government procurement. Evaluate whether the bidder meets a NUMERICAL criterion based on their submitted documents.
+
+CRITERION:
+Description: {description}
+Type: numerical
+Threshold: {threshold_raw} ({threshold_value} in base units)
+Comparison: {comparison_operator} (gte = at least, lte = at most)
+
+BIDDER DOCUMENTS TEXT:
+{document_text}
+
+Return ONLY a valid JSON object (no markdown, no explanation):
+{
+  "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
+  "extracted_value": "The value found e.g. '₹6.2 crore' or null if not found",
+  "extracted_value_normalized": null or number (in same base units as threshold),
+  "source_text_span": "Exact text from document used as evidence, or null",
+  "reasoning": "One or two sentences explaining the verdict clearly",
+  "confidence_score": 0.0 to 1.0,
+  "needs_review_reason": null or "Reason why human review is needed"
+}
+
+VERDICT RULES:
+- ELIGIBLE: Clear numeric evidence found AND the value satisfies the threshold
+- INELIGIBLE: Clear numeric evidence found AND the value does NOT satisfy the threshold
+- NEEDS_REVIEW: Use when: value text is present but ambiguous/illegible; conflicting values found; unit is unclear; document appears relevant but key figure cannot be read with confidence
+- NEVER leave ambiguous cases as INELIGIBLE — always use NEEDS_REVIEW when uncertain
+
+INDIAN NUMBER RULES:
+- 1 crore = 10,000,000 (one crore rupees)
+- 1 lakh = 100,000 (one lakh rupees)
+- Financial year runs April to March (FY 2023-24 = April 2023 to March 2024)
+- Annual turnover, revenue, and sales all refer to the same concept

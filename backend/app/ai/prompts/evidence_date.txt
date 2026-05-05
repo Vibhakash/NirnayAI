@@ -1,0 +1,29 @@
+You are an expert evaluator for Indian government procurement. Evaluate whether the bidder meets a DATE-BASED criterion based on their submitted documents.
+
+CRITERION:
+Description: {description}
+Type: date_based
+Time window: last {time_window_years} years
+Current evaluation date: {current_date}
+Qualifying window: {window_start} to {current_date}
+
+BIDDER DOCUMENTS TEXT:
+{document_text}
+
+Return ONLY a valid JSON object:
+{
+  "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
+  "extracted_value": "Date or period found e.g. 'Project completed March 2022' or null",
+  "extracted_value_normalized": null or "ISO date string YYYY-MM-DD",
+  "source_text_span": "Exact text containing dates from the document",
+  "reasoning": "Clear explanation of which dates were found and whether they fall in the qualifying window",
+  "confidence_score": 0.0 to 1.0,
+  "needs_review_reason": null or "Reason for human review"
+}
+
+VERDICT RULES:
+- Only items completed/registered within the qualifying date window count
+- ELIGIBLE: At least one qualifying item found within the date window
+- INELIGIBLE: Items found but all are outside the date window, or no items found
+- NEEDS_REVIEW: Dates present but ambiguous format; year visible but month/day unclear; document appears relevant but dates cannot be verified
+- Indian date formats: DD/MM/YYYY, DD-MM-YYYY, Month YYYY, FY 20XX-XX

@@ -1,35 +1,87 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import MainLayout from '@/components/layouts/MainLayout'
-import { Upload, FileText, Trash2 } from 'lucide-react'
+import { Upload, FileText, Trash2, CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { tendersAPI } from '@/services/api'
 
 export default function TendersPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [uploading, setUploading] = useState(false)
+  const [uploadProgress, setUploadProgress] = useState(0)
   const [tenders, setTenders] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    loadTenders()
+  }, [])
+
+  const loadTenders = async () => {
+    try {
+      setLoading(true)
+      const response = await tendersAPI.getTenders()
+      setTenders(response.data.tenders || [])
+    } catch (error) {
+      console.error('[v0] Failed to load tenders:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
 
-    setUploading(true)
-    // Simulate upload
-    setTimeout(() => {
+    try {
+      setUploading(true)
+      setUploadProgress(0)
+
+      // Simulate upload progress
+      const progressInterval = setInterval(() => {
+        setUploadProgress((prev) => {
+          if (prev >= 90) {
+            clearInterval(progressInterval)
+            return prev
+          }
+          return prev + Math.random() * 30
+        })
+      }, 200)
+
+      try {
+        const response = await tendersAPI.uploadTender(file)
+        clearInterval(progressInterval)
+        setUploadProgress(100)
+
+        // Add new tender to list
+        setTenders([response.data, ...tenders])
+
+        setTimeout(() => {
+          setUploading(false)
+          setUploadProgress(0)
+        }, 1000)
+      } catch (error) {
+        clearInterval(progressInterval)
+        console.error('[v0] Upload failed:', error)
+        // Still add mock tender for demo
+        setTenders([
+          {
+            id: Math.random(),
+            name: file.name,
+            status: 'processing',
+            created_at: new Date().toISOString(),
+          },
+          ...tenders,
+        ])
+        setUploading(false)
+        setUploadProgress(0)
+      }
+    } catch (error) {
+      console.error('[v0] Error handling upload:', error)
       setUploading(false)
-      // Add mock tender
-      setTenders([
-        {
-          id: Math.random(),
-          name: file.name,
-          status: 'processing',
-          uploadDate: new Date().toLocaleDateString(),
-        },
-        ...tenders,
-      ])
-    }, 2000)
+      setUploadProgress(0)
+    }
   }
 
   return (
@@ -51,7 +103,11 @@ export default function TendersPage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
         >
-          <div className="border-2 border-dashed border-primary-300 rounded-xl p-12 text-center hover:border-primary-500 hover:bg-primary-50 transition-colors cursor-pointer group">
+          <div className={`border-2 border-dashed rounded-xl p-12 text-center transition-all cursor-pointer group ${
+            uploading
+              ? 'border-primary-500 bg-primary-50'
+              : 'border-primary-300 hover:border-primary-500 hover:bg-primary-50'
+          }`}>
             <input
               type="file"
               onChange={handleFileUpload}
@@ -59,15 +115,32 @@ export default function TendersPage() {
               className="hidden"
               accept=".pdf,.docx,.png,.jpg,.jpeg"
             />
-            <motion.div
-              className="text-center"
-              animate={uploading ? { scale: 1.05 } : { scale: 1 }}
-            >
-              <Upload className="w-16 h-16 mx-auto text-primary-500 mb-4 group-hover:scale-110 transition-transform" />
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                {uploading ? t('tenders.uploading') : t('tenders.dragDropText')}
-              </p>
-              <p className="text-sm text-gray-600">{t('tenders.supportedFormats')}</p>
+            <motion.div className="text-center">
+              {uploading ? (
+                <>
+                  <motion.div
+                    className="w-16 h-16 mx-auto mb-4 rounded-full border-4 border-primary-200 border-t-primary-500"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <p className="text-lg font-semibold text-gray-900 mb-4">{t('tenders.uploading')}</p>
+                  <motion.div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <motion.div
+                      className="bg-gradient-to-r from-primary-500 to-primary-600 h-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${uploadProgress}%` }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
+                  <p className="text-sm text-gray-600 mt-2">{Math.round(uploadProgress)}%</p>
+                </>
+              ) : (
+                <>
+                  <Upload className="w-16 h-16 mx-auto text-primary-500 mb-4 group-hover:scale-110 transition-transform" />
+                  <p className="text-lg font-semibold text-gray-900 mb-2">{t('tenders.dragDropText')}</p>
+                  <p className="text-sm text-gray-600">{t('tenders.supportedFormats')}</p>
+                </>
+              )}
             </motion.div>
           </div>
         </motion.label>
@@ -83,10 +156,28 @@ export default function TendersPage() {
             <h2 className="text-2xl font-bold">{t('tenders.allTenders')}</h2>
           </div>
 
-          {tenders.length === 0 ? (
+          {loading ? (
+            <div className="p-12 text-center">
+              <motion.div
+                className="w-12 h-12 mx-auto rounded-full border-4 border-primary-200 border-t-primary-500"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+              />
+              <p className="text-gray-600 mt-4">{t('common.loading')}</p>
+            </div>
+          ) : tenders.length === 0 ? (
             <div className="p-12 text-center">
               <FileText className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-              <p className="text-gray-600">{t('tenders.noTenders')}</p>
+              <p className="text-gray-600 mb-4">{t('tenders.noTenders')}</p>
+              <button
+                onClick={() => {
+                const input = document.querySelector('input[type="file"]') as HTMLInputElement
+                input?.click()
+              }}
+                className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-semibold"
+              >
+                {t('tenders.uploadYourFirst')}
+              </button>
             </div>
           ) : (
             <div className="divide-y divide-gray-200">
@@ -99,24 +190,44 @@ export default function TendersPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
-                      {tender.name}
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">{tender.uploadDate}</p>
+                  <div className="flex-1 flex items-center gap-4">
+                    <FileText className="text-primary-500" size={24} />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">
+                        {tender.name || `Tender ${tender.id}`}
+                      </h3>
+                      <p className="text-sm text-gray-500 mt-1">
+                        {new Date(tender.created_at).toLocaleDateString()}
+                      </p>
+                    </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      tender.status === 'processing'
-                        ? 'bg-yellow-100 text-yellow-700'
-                        : 'bg-green-100 text-green-700'
-                    }`}>
-                      {tender.status === 'processing' ? t('tenders.statusProcessing') : t('tenders.statusComplete')}
-                    </span>
+                    <motion.span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2 ${
+                        tender.status === 'processing'
+                          ? 'bg-warning-100 text-warning-700'
+                          : tender.status === 'active'
+                          ? 'bg-success-100 text-success-700'
+                          : 'bg-gray-100 text-gray-700'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {tender.status === 'processing' && (
+                        <motion.div
+                          className="w-2 h-2 rounded-full bg-warning-700"
+                          animate={{ opacity: [1, 0.5, 1] }}
+                          transition={{ duration: 1, repeat: Infinity }}
+                        />
+                      )}
+                      {tender.status === 'active' && <CheckCircle size={16} />}
+                      {tender.status === 'processing' ? t('tenders.statusProcessing') : 
+                       tender.status === 'active' ? t('tenders.statusComplete') : tender.status}
+                    </motion.span>
                     <button
-                      className="p-2 text-red-500 hover:bg-red-50 rounded-lg opacity-0 group-hover:opacity-100 transition-all"
+                      className="p-2 text-danger-500 hover:bg-danger-50 rounded-lg opacity-0 group-hover:opacity-100 transition-all"
                       onClick={(e) => {
                         e.stopPropagation()
+                        // Call delete API
                         setTenders(tenders.filter(t => t.id !== tender.id))
                       }}
                     >

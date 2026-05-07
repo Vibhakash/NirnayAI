@@ -1,7 +1,10 @@
 import axios, { AxiosInstance, AxiosError } from 'axios'
 
 // Backend API URL - can be changed via environment variables
-const API_BASE_URL = (import.meta.env.VITE_API_URL as string) || 'http://localhost:8000/api'
+const API_BASE_URL =
+  import.meta.env.MODE === 'development'
+    ? 'http://localhost:8000/api'
+    : (import.meta.env.VITE_API_URL as string);
 
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({

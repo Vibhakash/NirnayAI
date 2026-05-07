@@ -145,6 +145,16 @@ async def run_single_bidder_evaluation(
                 )
             except Exception as e:
                 logger.error(f"Re-eval error: bidder={bidder_id} crit={criterion['criterion_id']}: {e}")
+                
+                # Check if it's a rate limit or a more specific AI error
+                err_str = str(e)
+                if "rate limit" in err_str.lower():
+                    reasoning = "The AI evaluation service is currently busy. To maintain accuracy, this criterion has been queued for manual verification."
+                    review_reason = "AI service rate limit reached. Manual review required to ensure timely evaluation."
+                else:
+                    reasoning = f"Automated evaluation encountered a technical discrepancy ({err_str}). Manual check recommended."
+                    review_reason = f"System-level evaluation discrepancy: {err_str}. Flagged for manual audit."
+
                 fallback = {
                     "tender_id": tender_id, "bidder_id": bidder_id,
                     "bidder_name": bidder["name"],
@@ -153,8 +163,8 @@ async def run_single_bidder_evaluation(
                     "is_mandatory": criterion.get("is_mandatory", True),
                     "verdict": VerdictType.NEEDS_REVIEW.value,
                     "effective_verdict": VerdictType.NEEDS_REVIEW.value,
-                    "reasoning": f"Evaluation error: {str(e)}",
-                    "needs_review_reason": f"System error during re-evaluation: {str(e)}",
+                    "reasoning": reasoning,
+                    "needs_review_reason": review_reason,
                     "confidence_score": 0.0, "is_human_reviewed": False,
                     "created_at": datetime.utcnow(),
                 }

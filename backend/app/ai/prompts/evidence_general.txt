@@ -8,7 +8,7 @@ BIDDER DOCUMENTS TEXT:
 {document_text}
 
 Return ONLY a valid JSON object:
-{
+{{
   "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
   "extracted_value": "Relevant text found that relates to this criterion, or null",
   "extracted_value_normalized": null,
@@ -16,7 +16,7 @@ Return ONLY a valid JSON object:
   "reasoning": "Clear, specific explanation of why this verdict was reached",
   "confidence_score": 0.0 to 1.0,
   "needs_review_reason": null or "Reason for human review"
-}
+}}
 
 VERDICT RULES:
 - ELIGIBLE: Document clearly confirms compliance with this requirement

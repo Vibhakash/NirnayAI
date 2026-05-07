@@ -10,7 +10,7 @@ BIDDER DOCUMENTS TEXT:
 {document_text}
 
 Return ONLY a valid JSON object (no markdown, no explanation):
-{
+{{
   "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
   "extracted_value": "The value found e.g. '₹6.2 crore' or null if not found",
   "extracted_value_normalized": null or number (in same base units as threshold),
@@ -18,7 +18,7 @@ Return ONLY a valid JSON object (no markdown, no explanation):
   "reasoning": "One or two sentences explaining the verdict clearly",
   "confidence_score": 0.0 to 1.0,
   "needs_review_reason": null or "Reason why human review is needed"
-}
+}}
 
 VERDICT RULES:
 - ELIGIBLE: Clear numeric evidence found AND the value satisfies the threshold

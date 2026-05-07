@@ -50,11 +50,19 @@ async def chat_json(
             logger.warning(f"Attempt {attempt}: JSON decode error: {e}")
             last_error = e
         except Exception as e:
-            logger.warning(f"Attempt {attempt}: Mistral API error: {e}")
+            err_msg = str(e).lower()
+            if "429" in err_msg or "rate limit" in err_msg:
+                logger.warning(f"Attempt {attempt}: Rate limit hit. Retrying...")
+            else:
+                logger.warning(f"Attempt {attempt}: Mistral API error: {e}")
             last_error = e
             if attempt < max_retries:
-                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+                # Increased backoff for rate limits
+                sleep_time = (2 ** attempt) + (5 if "429" in err_msg or "rate limit" in err_msg else 0)
+                await asyncio.sleep(sleep_time)
 
+    if "429" in str(last_error) or "rate limit" in str(last_error).lower():
+        raise RuntimeError("The AI service is currently experiencing high traffic (Rate Limit). Please try again in a few moments or review manually.")
     raise RuntimeError(f"Mistral API failed after {max_retries} attempts: {last_error}")
 
 

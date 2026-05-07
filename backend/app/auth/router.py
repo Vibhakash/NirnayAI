@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordRequestForm
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from app.auth.service import authenticate_user, create_user, create_access_token, update_preferred_language
 from app.auth.dependencies import get_current_user
 from app.models import UserRole, AuditActionType
@@ -27,9 +27,8 @@ class TokenResponse(BaseModel):
 async def register(
     req: RegisterRequest,
     request: Request,
-    current_user=Depends(get_current_user),
 ):
-    """Create a new user account."""
+    """Create a new user account (public endpoint — no auth required)."""
     try:
         user = await create_user(
             username=req.username,

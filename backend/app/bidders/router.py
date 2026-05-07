@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, BackgroundTasks
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, BackgroundTasks, Form
 from typing import List, Optional
 from pydantic import BaseModel
 from app.auth.dependencies import get_current_user
@@ -27,9 +27,9 @@ async def list_bidders(tender_id: str, current_user=Depends(get_current_user)):
 async def create_bidder(
     tender_id: str,
     background_tasks: BackgroundTasks,
-    name: str,
-    contact_email: Optional[str] = None,
-    contact_person: Optional[str] = None,
+    name: str = Form(...),
+    contact_email: Optional[str] = Form(None),
+    contact_person: Optional[str] = Form(None),
     files: List[UploadFile] = File(...),
     current_user=Depends(get_current_user),
 ):
@@ -88,3 +88,18 @@ async def get_bidder(tender_id: str, bidder_id: str, current_user=Depends(get_cu
     if not bidder or bidder.get("tender_id") != tender_id:
         raise HTTPException(404, "Bidder not found")
     return bidder
+
+
+@router.delete("/{bidder_id}", status_code=204)
+async def delete_bidder(tender_id: str, bidder_id: str, current_user=Depends(get_current_user)):
+    bidder = await bidder_svc.get_bidder(bidder_id)
+    if not bidder or bidder.get("tender_id") != tender_id:
+        raise HTTPException(404, "Bidder not found")
+        
+    deleted = await bidder_svc.delete_bidder(bidder_id)
+    if not deleted:
+        raise HTTPException(404, "Bidder could not be deleted")
+        
+    await log_event(AuditActionType.BIDDER_DELETED, "bidder", bidder_id,
+                    user_id=current_user["id"], user_name=current_user.get("username"),
+                    description=f"Bidder '{bidder.get('name')}' deleted from tender {tender_id}")

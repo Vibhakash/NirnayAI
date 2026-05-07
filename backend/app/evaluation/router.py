@@ -191,7 +191,12 @@ async def get_bidder_results(tender_id: str, bidder_id: str,
 @router.get("/tenders/{tender_id}/summary")
 async def get_summary(tender_id: str, current_user=Depends(get_current_user)):
     """High-level summary: counts of ELIGIBLE / INELIGIBLE / NEEDS_REVIEW bidders."""
+    from app.tenders.service import get_tender
     db = get_db()
+    tender = await get_tender(tender_id)
+    if not tender:
+        raise HTTPException(404, "Tender not found")
+        
     bidders = await list_bidders(tender_id)
     summary = {"ELIGIBLE": [], "INELIGIBLE": [], "NEEDS_REVIEW": [], "pending": []}
     for b in bidders:
@@ -209,4 +214,5 @@ async def get_summary(tender_id: str, current_user=Depends(get_current_user)):
         "eligible": summary["ELIGIBLE"],
         "ineligible": summary["INELIGIBLE"],
         "needs_review": summary["NEEDS_REVIEW"],
+        "signed_off": tender.get("status") == "SIGNED_OFF"
     }

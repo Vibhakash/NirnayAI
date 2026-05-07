@@ -166,7 +166,8 @@ async def run_evaluation(tender_id: str, job_id: str, user: dict) -> None:
                     )
                 except Exception as e:
                     logger.error(
-                        f"Eval failed for bidder {bidder_id} criterion {criterion['criterion_id']}: {e}"
+                        f"Eval failed for bidder {bidder_id} criterion {criterion['criterion_id']}: {e}",
+                        exc_info=True
                     )
                     # Never silently skip — log as NEEDS_REVIEW
                     fallback = {

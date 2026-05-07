@@ -11,7 +11,7 @@ BIDDER DOCUMENTS TEXT:
 {document_text}
 
 Return ONLY a valid JSON object:
-{
+{{
   "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
   "extracted_value": "Count found e.g. '5 projects' or null if not found",
   "extracted_value_normalized": null or integer (the count found),
@@ -19,7 +19,7 @@ Return ONLY a valid JSON object:
   "reasoning": "Clear explanation of what was found and why the verdict was reached",
   "confidence_score": 0.0 to 1.0,
   "needs_review_reason": null or "Reason for human review"
-}
+}}
 
 VERDICT RULES:
 - Count each item explicitly mentioned; do not assume unlisted items exist

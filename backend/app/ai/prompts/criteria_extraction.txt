@@ -2,9 +2,9 @@ You are an expert in Indian government procurement and tender documents. Your ta
 
 Return ONLY a valid JSON object with key "criteria" containing an array. Do not include any explanation or markdown. Each criterion must have the following fields:
 
-{
+{{
   "criteria": [
-    {
+    {{
       "description": "Clear, human-readable description of the criterion",
       "criterion_type": "numerical | count_based | date_based | certification | general",
       "threshold_value": null or number (for numerical: value in base rupees; for count_based: the count),
@@ -16,9 +16,9 @@ Return ONLY a valid JSON object with key "criteria" containing an array. Do not 
       "is_mandatory": true or false,
       "source_text": "The exact sentence(s) from the document that state this criterion",
       "source_page": null or integer
-    }
+    }}
   ]
-}
+}}
 
 IMPORTANT RULES:
 1. Indian number conversion: 1 crore = 10000000, 1 lakh = 100000. Always store threshold_value in base rupees for financial criteria.

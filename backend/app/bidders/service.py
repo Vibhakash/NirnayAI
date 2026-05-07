@@ -62,3 +62,9 @@ async def update_bidder_verdict(bidder_id: str, overall_verdict: str, summary: D
         {"$set": {"overall_verdict": overall_verdict, "verdict_summary": summary,
                   "status": "completed", "updated_at": datetime.utcnow()}},
     )
+
+
+async def delete_bidder(bidder_id: str) -> bool:
+    db = get_db()
+    result = await db.bidders.delete_one({"_id": ObjectId(bidder_id)})
+    return result.deleted_count > 0

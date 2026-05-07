@@ -9,7 +9,7 @@ BIDDER DOCUMENTS TEXT:
 {document_text}
 
 Return ONLY a valid JSON object:
-{
+{{
   "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
   "extracted_value": "Certificate number/details found e.g. 'GST: 22AAAAA0000A1Z5' or null",
   "extracted_value_normalized": null or string (the certificate number/identifier),
@@ -17,7 +17,7 @@ Return ONLY a valid JSON object:
   "reasoning": "Clear explanation of whether valid certification was found",
   "confidence_score": 0.0 to 1.0,
   "needs_review_reason": null or "Reason for human review"
-}
+}}
 
 VERDICT RULES:
 - ELIGIBLE: Valid certificate clearly present with readable registration number and no expired date

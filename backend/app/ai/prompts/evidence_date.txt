@@ -11,7 +11,7 @@ BIDDER DOCUMENTS TEXT:
 {document_text}
 
 Return ONLY a valid JSON object:
-{
+{{
   "verdict": "ELIGIBLE | INELIGIBLE | NEEDS_REVIEW",
   "extracted_value": "Date or period found e.g. 'Project completed March 2022' or null",
   "extracted_value_normalized": null or "ISO date string YYYY-MM-DD",
@@ -19,7 +19,7 @@ Return ONLY a valid JSON object:
   "reasoning": "Clear explanation of which dates were found and whether they fall in the qualifying window",
   "confidence_score": 0.0 to 1.0,
   "needs_review_reason": null or "Reason for human review"
-}
+}}
 
 VERDICT RULES:
 - Only items completed/registered within the qualifying date window count

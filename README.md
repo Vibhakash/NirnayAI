@@ -3,7 +3,7 @@
 <!-- Animated Title -->
 <h1>
   <img 
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=34&duration=3000&pause=700&color=6366F1&center=true&vCenter=true&multiline=true&repeat=true&width=850&height=180&lines=NirnayAI;AI-Powered+Tender;Evaluation+System" 
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=34&duration=1&pause=0&color=6366F1&center=true&vCenter=true&multiline=true&repeat=false&width=850&height=180&lines=NirnayAI;AI-Powered+Tender+Evaluation+System" 
     alt="NirnayAI"
   />
 </h1>

@@ -512,339 +512,171 @@ npm run dev
 <div align="center">
 
 ## 📚 Documentation
-
-</div>
-
-<table>
-<tr>
-<td align="center" width="25%">
-
-### 🔧 Setup Guide
-[View Guide](SETUP_INSTRUCTIONS.md)
-
-Detailed installation and configuration instructions
-
-</td>
-<td align="center" width="25%">
-
-### 🧪 Testing Guide
-[View Guide](MANUAL_TESTING_GUIDE.md)
-
-Manual testing scenarios and test cases
-
-</td>
-<td align="center" width="25%">
-
+ 
+| Guide | Description |
+|---|---|
+| [Setup Guide](SETUP_INSTRUCTIONS.md) | Detailed installation and configuration instructions |
+| [Testing Guide](MANUAL_TESTING_GUIDE.md) | Manual testing scenarios and test cases |
+ 
 ---
-
-<div align="center">
-
+ 
 ## 💡 Usage
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Simple+Workflow" alt="Usage" />
-
-</div>
-
-### 🔄 Complete Workflow
-
-```mermaid
-graph LR
-    A[📄 Upload Tender] --> B[🤖 AI Extracts Criteria]
-    B --> C[✏️ Review & Edit Criteria]
-    C --> D[🏢 Add Bidders]
-    D --> E[📤 Upload Submissions]
-    E --> F[⚙️ Run AI Evaluation]
-    F --> G{All Clear?}
-    G -->|Yes| H[📊 Generate Report]
-    G -->|Needs Review| I[👁️ Human Review]
-    I --> H
-    H --> J[🔏 Digital Sign-off]
-    J --> K[✅ Complete]
-    
-    style A fill:#3B82F6
-    style B fill:#8B5CF6
-    style F fill:#EC4899
-    style I fill:#F59E0B
-    style J fill:#10B981
-    style K fill:#059669
+ 
+### Complete Workflow
+ 
 ```
-
-### 📝 Step-by-Step Guide
-
-<details>
-<summary><b>1️⃣ Login to System</b></summary>
-
-```bash
-Navigate to: http://localhost:5173
+Upload Tender → AI Extracts Criteria → Review & Edit → Add Bidders
+     → Upload Submissions → Run AI Evaluation → Human Review (if needed)
+     → Generate Report → Digital Sign-off → Complete
+```
+ 
+### Step-by-Step Guide
+ 
+**1. Login to system**
+ 
+```
+URL:      http://localhost:5173
 Username: officer
 Password: Officer@123
 ```
-
-</details>
-
-<details>
-<summary><b>2️⃣ Upload Tender Document</b></summary>
-
+ 
+**2. Upload tender document**
+ 
 - Click **"Upload New Tender"**
 - Fill in tender details
 - Upload PDF/DOCX tender document
 - AI automatically extracts evaluation criteria
-
-</details>
-
-<details>
-<summary><b>3️⃣ Review Extracted Criteria</b></summary>
-
+**3. Review extracted criteria**
+ 
 - Review AI-extracted criteria
 - Edit descriptions or requirements
 - Add custom criteria if needed
 - Delete irrelevant ones
 - Click **"Confirm These Requirements"**
-
-</details>
-
-<details>
-<summary><b>4️⃣ Add Bidder Submissions</b></summary>
-
+**4. Add bidder submissions**
+ 
 - Open tender details
 - Click **"Add Company"**
 - Enter bidder name
 - Upload their submission documents
 - Repeat for all bidders
-
-</details>
-
-<details>
-<summary><b>5️⃣ Run AI Evaluation</b></summary>
-
-- Navigate to **"Evaluate"** tab
+**5. Run AI evaluation**
+ 
+- Navigate to the **"Evaluate"** tab
 - Click **"Start Evaluation"**
 - Wait for AI to process all bidders
 - View results: Eligible ✅ / Ineligible ❌ / Needs Review ⚠️
-
-</details>
-
-<details>
-<summary><b>6️⃣ Review Edge Cases</b></summary>
-
+**6. Review edge cases**
+ 
 - Go to **"Review Queue"**
 - Check items flagged for human review
 - Read AI reasoning and evidence
 - Accept or override decision
 - Provide justification for overrides
-
-</details>
-
-<details>
-<summary><b>7️⃣ Generate Final Report</b></summary>
-
+**7. Generate final report**
+ 
 - Navigate to **"Reports"**
 - Review evaluation summary
 - Download PDF or Excel report
 - Complete digital sign-off
 - Mark tender as complete
-
-</details>
-
 ---
-
-<div align="center">
-
+ 
 ## 🛠️ Technology Stack
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=8B5CF6&center=true&vCenter=true&width=600&lines=Built+with+Best-in-Class+Tech" alt="Tech Stack" />
-
-</div>
-
-### 🎨 Frontend Technologies
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=react,typescript,tailwind,vite,npm" alt="Frontend Stack"/>
-</p>
-
-<table>
-<tr><td>
-
-**Core Framework**
-- ⚛️ React 18.3.1
-- 🔷 TypeScript 5.3.3
-- ⚡ Vite 5.0.8
-
-</td><td>
-
-**Styling & UI**
-- 🎨 TailwindCSS 3.4.1
-- ✨ Framer Motion 10.16.16
-- 🎯 Lucide React Icons
-
-</td><td>
-
-**State & Routing**
-- 🐻 Zustand 4.4.2
-- 🛣️ React Router v6
-- 🔌 Axios
-
-</td><td>
-
-**Internationalization**
-- 🌐 i18next 23.7.6
-- 🗣️ react-i18next 14.0.0
-- 🔤 3 Languages Support
-
-</td></tr>
-</table>
-
-### ⚙️ Backend Technologies
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,fastapi,mongodb,docker" alt="Backend Stack"/>
-</p>
-
-<table>
-<tr><td>
-
-**Core Framework**
-- 🐍 Python 3.9+
-- ⚡ FastAPI 0.111.0
-- 🦄 Uvicorn 0.29.0
-
-</td><td>
-
-**Database**
-- 🍃 MongoDB Atlas
-- 🏎️ Motor (async driver)
-- 📊 PyMongo 4.7.2
-
-</td><td>
-
-**AI & ML**
-- 🤖 Mistral AI API
-- 👁️ EasyOCR 1.7.1
-- 📄 PyMuPDF, python-docx
-
-</td><td>
-
-**Security & Auth**
-- 🔐 JWT (python-jose)
-- 🔒 bcrypt Password Hashing
-- 🛡️ Passlib
-
-</td></tr>
-</table>
-
-### 📊 Data & Reports
-
-<table>
-<tr><td>
-
-**Report Generation**
-- 📄 ReportLab (PDF)
-- 📊 OpenPyXL (Excel)
-- 📋 JSON Export
-
-</td><td>
-
-**Document Processing**
-- 📝 PyMuPDF (PDF parsing)
-- 📄 python-docx (Word docs)
-- 🖼️ Pillow (Image processing)
-
-</td><td>
-
-**Utilities**
-- ⚙️ Pydantic Settings
-- 🔧 python-dotenv
-- 📁 aiofiles
-- 🌐 httpx
-
-</td></tr>
-</table>
-
+ 
+### Frontend
+ 
+| Category | Technologies |
+|---|---|
+| Core Framework | React 18.3.1, TypeScript 5.3.3, Vite 5.0.8 |
+| Styling & UI | TailwindCSS 3.4.1, Framer Motion 10.16.16, Lucide React Icons |
+| State & Routing | Zustand 4.4.2, React Router v6, Axios |
+| Internationalization | i18next 23.7.6, react-i18next 14.0.0, 3 language support |
+ 
+### Backend
+ 
+| Category | Technologies |
+|---|---|
+| Core Framework | Python 3.9+, FastAPI 0.111.0, Uvicorn 0.29.0 |
+| Database | MongoDB Atlas, Motor (async driver), PyMongo 4.7.2 |
+| AI & ML | Mistral AI API, EasyOCR 1.7.1, PyMuPDF, python-docx |
+| Security & Auth | JWT (python-jose), bcrypt password hashing, Passlib |
+ 
+### Data & Reports
+ 
+| Category | Technologies |
+|---|---|
+| Report Generation | ReportLab (PDF), OpenPyXL (Excel), JSON Export |
+| Document Processing | PyMuPDF (PDF parsing), python-docx (Word docs), Pillow (images) |
+| Utilities | Pydantic Settings, python-dotenv, aiofiles, httpx |
+ 
 ---
-
-<div align="center">
-
-## 📊 Project Structure
-
-</div>
-
+ 
+## 📂 Project Structure
+ 
 ```
 NirnayAI/
-│
-├── 📁 backend/                      # FastAPI Backend
-│   ├── 📁 app/
-│   │   ├── 📁 ai/                   # AI Evaluation Engine
-│   │   │   ├── mistral_client.py    # Mistral AI integration
+├── backend/
+│   ├── app/
+│   │   ├── ai/                    # AI evaluation engine
+│   │   │   ├── mistral_client.py
 │   │   │   ├── criteria_extractor.py
 │   │   │   ├── evidence_evaluator.py
 │   │   │   ├── confidence_bands.py
-│   │   │   └── 📁 prompts/          # AI prompt templates
-│   │   │
-│   │   ├── 📁 auth/                 # Authentication & JWT
+│   │   │   └── prompts/           # AI prompt templates
+│   │   ├── auth/                  # Authentication & JWT
 │   │   │   ├── router.py
 │   │   │   ├── service.py
 │   │   │   └── dependencies.py
-│   │   │
-│   │   ├── 📁 tenders/              # Tender Management
+│   │   ├── tenders/               # Tender management
 │   │   │   ├── router.py
 │   │   │   ├── service.py
 │   │   │   └── models.py
-│   │   │
-│   │   ├── 📁 bidders/              # Bidder Management
+│   │   ├── bidders/               # Bidder management
 │   │   │   ├── router.py
 │   │   │   └── service.py
-│   │   │
-│   │   ├── 📁 documents/            # Document Processing
-│   │   │   ├── 📁 parsers/          # PDF, DOCX parsers
-│   │   │   ├── 📁 ocr/              # OCR engine
+│   │   ├── documents/             # Document processing
+│   │   │   ├── parsers/
+│   │   │   ├── ocr/
 │   │   │   ├── service.py
 │   │   │   └── storage.py
-│   │   │
-│   │   ├── 📁 evaluation/           # Evaluation Logic
+│   │   ├── evaluation/            # Evaluation logic
 │   │   │   ├── router.py
-│   │   │   ├── tasks.py             # Background jobs
+│   │   │   ├── tasks.py
 │   │   │   └── completeness.py
-│   │   │
-│   │   ├── 📁 review/               # Human Review System
+│   │   ├── review/                # Human review system
 │   │   │   └── router.py
-│   │   │
-│   │   ├── 📁 reports/              # Report Generation
+│   │   ├── reports/               # Report generation
 │   │   │   ├── pdf_generator.py
 │   │   │   ├── excel_generator.py
 │   │   │   └── json_generator.py
-│   │   │
-│   │   ├── 📁 audit/                # Audit Logging
+│   │   ├── audit/                 # Audit logging
 │   │   │   ├── router.py
 │   │   │   └── service.py
-│   │   │
-│   │   ├── 📁 i18n/                 # Internationalization
+│   │   ├── i18n/                  # Internationalization
 │   │   │   ├── router.py
 │   │   │   └── translator.py
-│   │   │
-│   │   ├── 📁 jobs/                 # Background Jobs
+│   │   ├── jobs/                  # Background jobs
 │   │   │   ├── router.py
 │   │   │   ├── service.py
 │   │   │   └── sse.py
-│   │   │
-│   │   ├── main.py                  # FastAPI app entry
-│   │   ├── config.py                # Configuration
-│   │   ├── database.py              # MongoDB connection
-│   │   └── models.py                # Pydantic models
-│   │
-│   └── requirements.txt             # Python dependencies
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   └── models.py
+│   └── requirements.txt
 │
-├── 📁 frontend/                     # React Frontend
-│   ├── 📁 src/
-│   │   ├── 📁 components/           # Reusable Components
-│   │   │   ├── 📁 layouts/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── layouts/
 │   │   │   │   └── MainLayout.tsx
 │   │   │   ├── Navbar.tsx
 │   │   │   ├── Sidebar.tsx
 │   │   │   ├── StatCard.tsx
 │   │   │   ├── LanguageSwitcher.tsx
 │   │   │   └── ProtectedRoute.tsx
-│   │   │
-│   │   ├── 📁 pages/                # Page Components
+│   │   ├── pages/
 │   │   │   ├── LandingPage.tsx
 │   │   │   ├── LoginPage.tsx
 │   │   │   ├── RegisterPage.tsx
@@ -855,518 +687,262 @@ NirnayAI/
 │   │   │   ├── ReviewQueuePage.tsx
 │   │   │   ├── ReportsPage.tsx
 │   │   │   └── AuditLogsPage.tsx
-│   │   │
-│   │   ├── 📁 services/             # API Services
-│   │   │   └── api.ts               # Axios config & endpoints
-│   │   │
-│   │   ├── 📁 stores/               # State Management
-│   │   │   └── authStore.ts         # Zustand auth store
-│   │   │
-│   │   ├── 📁 i18n/                 # Translations
+│   │   ├── services/
+│   │   │   └── api.ts
+│   │   ├── stores/
+│   │   │   └── authStore.ts
+│   │   ├── i18n/
 │   │   │   ├── config.ts
-│   │   │   └── 📁 locales/
-│   │   │       ├── en.json          # English
-│   │   │       ├── hi.json          # Hindi
-│   │   │       └── kn.json          # Kannada
-│   │   │
-│   │   ├── App.tsx                  # Root component
-│   │   └── main.tsx                 # Entry point
-│   │
-│   ├── package.json                 # npm dependencies
-│   ├── tailwind.config.ts           # Tailwind config
-│   ├── vite.config.ts               # Vite config
-│   └── tsconfig.json                # TypeScript config
+│   │   │   └── locales/
+│   │   │       ├── en.json
+│   │   │       ├── hi.json
+│   │   │       └── kn.json
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── package.json
+│   ├── tailwind.config.ts
+│   ├── vite.config.ts
+│   └── tsconfig.json
 │
-├── 📁 mock-data/                    # Database Seeding
-│   └── seed_database.py             # Demo data script
-│
-├── 📁 sample-files/                 # Sample Documents
+├── mock-data/
+│   └── seed_database.py
+├── sample-files/
 │   ├── 00_Sample_Tender_SmartCity.docx
 │   ├── 01_Bidder_TechNova_Eligible.docx
 │   └── 02_Bidder_UrbanBuild_UnderReview.docx
-│
-├── .env.example                     # Environment template
-├── .gitignore                       # Git ignore rules
-├── README.md                        # This file
-├── SETUP_INSTRUCTIONS.md            # Detailed setup guide
-└── MANUAL_TESTING_GUIDE.md          # Testing guide
+├── .env.example
+├── .gitignore
+├── README.md
+├── SETUP_INSTRUCTIONS.md
+└── MANUAL_TESTING_GUIDE.md
 ```
-
+ 
 ---
-
-<div align="center">
-
+ 
 ## 🔧 Configuration
-
-</div>
-
-### 🔑 Environment Variables
-
-Create a `.env` file in the project root with the following variables:
-
-<details>
-<summary><b>🤖 Mistral AI Configuration</b></summary>
-
+ 
+Create a `.env` file in the project root:
+ 
 ```bash
-# Get API key from: https://console.mistral.ai
+# Mistral AI — https://console.mistral.ai
 MISTRAL_API_KEY=your_mistral_api_key_here
 MISTRAL_MODEL_LARGE=mistral-large-latest
 MISTRAL_MODEL_SMALL=mistral-small-latest
-```
-
-</details>
-
-<details>
-<summary><b>🍃 MongoDB Configuration</b></summary>
-
-```bash
-# Get from MongoDB Atlas: https://mongodb.com/atlas
+ 
+# MongoDB — https://mongodb.com/atlas
 MONGODB_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/
 DB_NAME=nirnayai
-```
-
-</details>
-
-<details>
-<summary><b>🔒 Security Configuration</b></summary>
-
-```bash
-# Generate with: python -c "import secrets; print(secrets.token_hex(32))"
+ 
+# Security — generate with: python -c "import secrets; print(secrets.token_hex(32))"
 SECRET_KEY=your_64_character_hex_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=480
-```
-
-</details>
-
-<details>
-<summary><b>👁️ OCR Configuration</b></summary>
-
-```bash
+ 
+# OCR
 OCR_LANGUAGES=en,hi
 OCR_CONFIDENCE_THRESHOLD=0.70
 OCR_USE_GPU=false
-```
-
-</details>
-
-<details>
-<summary><b>🎯 AI Threshold Configuration</b></summary>
-
-```bash
-# Lower = more AI decisions, Higher = more human reviews
+ 
+# AI thresholds — lower = more AI decisions, higher = more human reviews
 LLM_CONFIDENCE_THRESHOLD=0.75
-```
-
-</details>
-
-<details>
-<summary><b>📁 File Upload Configuration</b></summary>
-
-```bash
+ 
+# File uploads
 UPLOAD_DIR=./uploads
 MAX_FILE_SIZE_MB=50
-```
-
-</details>
-
-<details>
-<summary><b>🌐 Application Configuration</b></summary>
-
-```bash
+ 
+# Application
 APP_ENV=development
 CORS_ORIGINS=http://localhost:5173
 APP_HOST=0.0.0.0
 APP_PORT=8000
 ```
-
-</details>
-
+ 
 ---
-
-<div align="center">
-
+ 
 ## 🧪 Testing
-
-</div>
-
-### 🔍 Manual Testing
-
-Follow our comprehensive testing guide: [MANUAL_TESTING_GUIDE.md](MANUAL_TESTING_GUIDE.md)
-
-### 🧪 Test with Sample Files
-
-```bash
-# Sample files are included in sample-files/
-# Use these to test the complete workflow:
-
-1. Upload: 00_Sample_Tender_SmartCity.docx
-2. Add Bidder: 01_Bidder_TechNova_Eligible.docx
-3. Add Bidder: 02_Bidder_UrbanBuild_UnderReview.docx
+ 
+Follow the comprehensive testing guide: [MANUAL_TESTING_GUIDE.md](MANUAL_TESTING_GUIDE.md)
+ 
+**Test with sample files:**
+ 
+```
+1. Upload:    sample-files/00_Sample_Tender_SmartCity.docx
+2. Add bidder: sample-files/01_Bidder_TechNova_Eligible.docx
+3. Add bidder: sample-files/02_Bidder_UrbanBuild_UnderReview.docx
 4. Run evaluation and review results
 ```
-
-### 🔌 API Testing
-
-Interactive API documentation available at: [http://localhost:8000/docs](http://localhost:8000/docs)
-
+ 
+Interactive API documentation: [http://localhost:8000/docs](http://localhost:8000/docs)
+ 
 ---
-
-<div align="center">
-
+ 
 ## 🌍 Internationalization
-
-</div>
-
+ 
 NirnayAI supports three languages with complete UI and content translation:
-
-<table>
-<tr>
-<td align="center" width="33%">
-
-### 🇬🇧 English
-
-Default language
-
-Full support for UI and AI reasoning
-
-</td>
-<td align="center" width="33%">
-
-### 🇮🇳 हिंदी
-
-Hindi
-
-देवनागरी script support
-
-AI-powered translation
-
-</td>
-<td align="center" width="33%">
-
-### 🇮🇳 ಕನ್ನಡ
-
-Kannada
-
-Kannada script support
-
-Dynamic content translation
-
-</td>
-</tr>
-</table>
-
-**Translation Coverage:**
-- ✅ Complete UI translation
-- ✅ AI reasoning translation
-- ✅ Error messages
-- ✅ Report generation
-- ✅ Email notifications (future)
-
+ 
+| Language | Script | Notes |
+|---|---|---|
+| 🇬🇧 English | Latin | Default language, full UI and AI reasoning support |
+| 🇮🇳 Hindi (हिंदी) | Devanagari | AI-powered translation |
+| 🇮🇳 Kannada (ಕನ್ನಡ) | Kannada | Dynamic content translation |
+ 
+**Translation coverage:** UI, AI reasoning, error messages, report generation, email notifications (future)
+ 
 ---
-
-<div align="center">
-
+ 
 ## 🔒 Security
-
-</div>
-
-### 🛡️ Security Features
-
-<table>
-<tr><td>
-
-**Authentication**
-- 🔐 JWT-based authentication
-- 🔒 bcrypt password hashing
-- ⏱️ Token expiration
-- 🔄 Refresh token support
-
-</td><td>
-
-**Data Protection**
-- 🗄️ MongoDB encryption at rest
-- 🔒 HTTPS enforcement (production)
-- 🚫 CORS protection
-- 🛡️ SQL injection prevention
-
-</td><td>
-
-**Audit & Compliance**
-- 📝 Complete activity logging
-- 🔍 User action tracking
-- 📊 Compliance reports
-- 🕐 Timestamp verification
-
-</td><td>
-
-**File Security**
-- ✅ File type validation
-- 📏 Size restrictions
-- 🦠 Malware scanning (future)
-- 🔒 Secure storage
-
-</td></tr>
-</table>
-
-### 🔐 Security Best Practices
-
-- Never commit `.env` file to version control
+ 
+| Area | Features |
+|---|---|
+| Authentication | JWT-based auth, bcrypt password hashing, token expiration, refresh token support |
+| Data protection | MongoDB encryption at rest, HTTPS (production), CORS protection, SQL injection prevention |
+| Audit & compliance | Complete activity logging, user action tracking, compliance reports, timestamp verification |
+| File security | File type validation, size restrictions, secure storage, malware scanning (future) |
+ 
+**Best practices:**
+- Never commit `.env` to version control
 - Rotate `SECRET_KEY` regularly in production
 - Use strong passwords for MongoDB
 - Enable MongoDB IP whitelisting
 - Keep dependencies updated
 - Monitor audit logs regularly
-
 ---
-
-<div align="center">
-
+ 
 ## 🐛 Troubleshooting
-
-</div>
-
-<details>
-<summary><b>❌ MongoDB Connection Failed</b></summary>
-
-**Solutions:**
+ 
+**MongoDB connection failed**
+ 
 1. Verify connection string in `.env`
 2. Check MongoDB Atlas IP whitelist
 3. Ensure username/password are correct
-4. Test connection: `python -c "from motor.motor_asyncio import AsyncIOMotorClient; import asyncio; asyncio.run(AsyncIOMotorClient('YOUR_URL').admin.command('ping'))"`
-
-</details>
-
-<details>
-<summary><b>❌ Mistral AI Authentication Error</b></summary>
-
-**Solutions:**
+4. Test: `python -c "from motor.motor_asyncio import AsyncIOMotorClient; import asyncio; asyncio.run(AsyncIOMotorClient('YOUR_URL').admin.command('ping'))"`
+**Mistral AI authentication error**
+ 
 1. Verify API key in `.env`
 2. Check account credits at console.mistral.ai
 3. Ensure model names are correct
-4. Test API key: `curl https://api.mistral.ai/v1/models -H "Authorization: Bearer YOUR_KEY"`
-
-</details>
-
-<details>
-<summary><b>❌ Port Already in Use</b></summary>
-
-**Solutions:**
+4. Test: `curl https://api.mistral.ai/v1/models -H "Authorization: Bearer YOUR_KEY"`
+**Port already in use**
+ 
 ```bash
-# Find and kill process
-# Windows: netstat -ano | findstr :8000
-# Linux/Mac: lsof -ti:8000 | xargs kill -9
-
-# Or use different port
+# Linux/Mac
+lsof -ti:8000 | xargs kill -9
+ 
+# Windows
+netstat -ano | findstr :8000
+ 
+# Or use a different port
 uvicorn app.main:app --port 8001
 ```
-
-</details>
-
-<details>
-<summary><b>❌ CORS Errors</b></summary>
-
-**Solutions:**
-1. Verify `CORS_ORIGINS` in `.env` matches frontend URL
+ 
+**CORS errors**
+ 
+1. Verify `CORS_ORIGINS` in `.env` matches the frontend URL
 2. Ensure both servers are running
-3. Clear browser cache
-4. Check browser console for specific error
-
-</details>
-
-<details>
-<summary><b>❌ OCR Models Not Downloading</b></summary>
-
-**Solutions:**
+3. Clear browser cache and check the browser console
+**OCR models not downloading**
+ 
 1. Ensure stable internet connection
-2. Models auto-download on first use (~500MB)
+2. Models auto-download on first use (~500 MB)
 3. Check `~/.EasyOCR/model/` has write permissions
 4. Manually download from [EasyOCR GitHub](https://github.com/JaidedAI/EasyOCR)
-
-</details>
-
-<details>
-<summary><b>❌ Frontend Build Errors</b></summary>
-
-**Solutions:**
+**Frontend build errors**
+ 
 ```bash
-# Clear cache and reinstall
 cd frontend
 rm -rf node_modules package-lock.json
 npm cache clean --force
 npm install
 ```
-
-</details>
-
-> 💡 **Still stuck?** Check [GitHub Issues](https://github.com/yourusername/NirnayAI/issues) or create a new one!
-
+ 
 ---
-
-<div align="center">
-
+ 
 ## 🗺️ Roadmap
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=EC4899&center=true&vCenter=true&width=600&lines=Exciting+Features+Coming+Soon" alt="Roadmap" />
-
-</div>
-
-### 🎯 Phase 1: Current (v1.0)
+ 
+### Phase 1 — Current (v1.0)
+ 
 - [x] AI-powered criteria extraction
 - [x] Automated bidder evaluation
 - [x] Human review queue
 - [x] Multilingual support (EN, HI, KN)
 - [x] PDF & Excel report generation
 - [x] Complete audit trail
-
-### 🚀 Phase 2: Enhancement (v1.5)
-- [ ] 📧 **Email Notifications** - Automated alerts for evaluation events
-- [ ] 📊 **Advanced Analytics** - Deep insights dashboard with charts
-- [ ] 🔄 **Real-time Collaboration** - Multiple users working simultaneously
-- [ ] 📱 **Mobile App** - iOS and Android native apps
-- [ ] 🎨 **Custom Templates** - Configurable report templates
-- [ ] 🔍 **Advanced Search** - Full-text search across documents
-
-### 🌟 Phase 3: Integration (v2.0)
-- [ ] 🔗 **E-Procurement Integration** - Connect with govt portals
-- [ ] ⛓️ **Blockchain Audit Trail** - Immutable records
-- [ ] 🤖 **Advanced AI Models** - Specialized domain models
-- [ ] 📄 **More File Formats** - Excel, CSV, XML support
-- [ ] 🌐 **More Languages** - Tamil, Telugu, Bengali support
-- [ ] 🔐 **SSO Integration** - Single sign-on with govt systems
-
-### 🚀 Phase 4: Scale (v3.0)
-- [ ] ☁️ **Cloud-Native Deployment** - Kubernetes orchestration
-- [ ] 📈 **Performance Optimization** - Handle 1000+ concurrent users
-- [ ] 🔄 **Workflow Automation** - Custom approval workflows
-- [ ] 📊 **BI Integration** - Power BI, Tableau connectors
-- [ ] 🎓 **Training Portal** - Built-in user training modules
-- [ ] 🌍 **Multi-Tenancy** - Support multiple organizations
-
-
+### Phase 2 — Enhancement (v1.5)
+ 
+- [ ] Email notifications — automated alerts for evaluation events
+- [ ] Advanced analytics — deep insights dashboard with charts
+- [ ] Real-time collaboration — multiple users working simultaneously
+- [ ] Mobile app — iOS and Android native apps
+- [ ] Custom templates — configurable report templates
+- [ ] Advanced search — full-text search across documents
+### Phase 3 — Integration (v2.0)
+ 
+- [ ] E-procurement integration — connect with government portals
+- [ ] Blockchain audit trail — immutable records
+- [ ] Advanced AI models — specialized domain models
+- [ ] More file formats — Excel, CSV, XML support
+- [ ] More languages — Tamil, Telugu, Bengali support
+- [ ] SSO integration — single sign-on with government systems
+### Phase 4 — Scale (v3.0)
+ 
+- [ ] Cloud-native deployment — Kubernetes orchestration
+- [ ] Performance optimization — handle 1000+ concurrent users
+- [ ] Workflow automation — custom approval workflows
+- [ ] BI integration — Power BI, Tableau connectors
+- [ ] Training portal — built-in user training modules
+- [ ] Multi-tenancy — support multiple organizations
 ---
-
+ 
+## 🙏 Acknowledgments
+ 
+| Library | Purpose |
+|---|---|
+| [Mistral AI](https://mistral.ai) | Advanced AI evaluation engine |
+| [MongoDB](https://mongodb.com) | Flexible, scalable database |
+| [FastAPI](https://fastapi.tiangolo.com) | High-performance web framework |
+| [React](https://react.dev) | UI library |
+| [EasyOCR](https://github.com/JaidedAI/EasyOCR) | Optical character recognition |
+| [TailwindCSS](https://tailwindcss.com) | Styling |
+| [Zustand](https://github.com/pmndrs/zustand) | State management |
+| [i18next](https://www.i18next.com) | Internationalization |
+| [ReportLab](https://www.reportlab.com) | PDF generation |
+| [python-jose](https://github.com/mpdavis/python-jose) | JWT authentication |
+ 
+---
+ 
+## 📧 Contact
+ 
+**Project Maintainer:** Vibha Kashyap
+ 
+- Email: kashyapvib@gmail.com
+- GitHub: [Vibhakash](https://github.com/Vibhakash)
+- LinkedIn: [Vibha Kashyap](https://www.linkedin.com/in/vibha-kashyap-b89517313)
+---
+ 
 ## 📄 License
-
-</div>
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
+ 
+This project is licensed under the **MIT License**.
+ 
 ```
 MIT License
-
+ 
 Copyright (c) 2024 NirnayAI Contributors
-
+ 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
+ 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
+ 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
-
+ 
 ---
-
-<div align="center">
-
-## 🙏 Acknowledgments
-
-</div>
-
-<table>
-<tr>
-<td align="center" width="25%">
-
-### 🤖 Mistral AI
-
-Advanced AI evaluation engine
-
-[mistral.ai](https://mistral.ai)
-
-</td>
-<td align="center" width="25%">
-
-### 🍃 MongoDB
-
-Flexible, scalable database
-
-[mongodb.com](https://mongodb.com)
-
-</td>
-<td align="center" width="25%">
-
-### ⚡ FastAPI
-
-High-performance web framework
-
-[fastapi.tiangolo.com](https://fastapi.tiangolo.com)
-
-</td>
-<td align="center" width="25%">
-
-### ⚛️ React
-
-Amazing UI library
-
-[react.dev](https://react.dev)
-
-</td>
-</tr>
-</table>
-
-**Special Thanks To:**
-- 👁️ **EasyOCR** - Optical character recognition
-- 🎨 **TailwindCSS** - Beautiful styling
-- 🐻 **Zustand** - Simple state management
-- 🌐 **i18next** - Internationalization
-- 📄 **ReportLab** - PDF generation
-- 🔒 **python-jose** - JWT authentication
-
----
-
-<div align="center">
-
-## 📧 Contact
-
-</div>
-
-<table align="center">
-<tr>
-<td align="center">
-
-### 📬 Get in Touch
-
-</td>
-</tr>
-<tr>
-<td>
-
-**Project Maintainer:** [Vibha Kashyap]
-
-📧 **Email:** kashyapvib@gmail.com
-
-🐙 **GitHub:** [Vibhakash](https://github.com/Vibhakash)
-
-💼 **LinkedIn:** [Vibha Kashyap](www.linkedin.com/in/vibha-kashyap-b89517313)
-
-</td>
-</tr>
-</table>
-
-
-<br/>
-
-**NirnayAI** © 2024 - Transforming Government Procurement with AI
-
-<br/>
-
-<sub>⚖️ Transparent • 🤖 Intelligent • ⚡ Efficient</sub>
-
-</div>
+ 
+*NirnayAI © 2024 — Transforming Government Procurement with AI*

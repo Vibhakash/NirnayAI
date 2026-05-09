@@ -915,17 +915,6 @@ npm install
 | [ReportLab](https://www.reportlab.com) | PDF generation |
 | [python-jose](https://github.com/mpdavis/python-jose) | JWT authentication |
 
----
-
-## 📧 Contact
-
-**Project Maintainer:** Vibha Kashyap
-
-- Email: kashyapvib@gmail.com
-- GitHub: [Vibhakash](https://github.com/Vibhakash)
-- LinkedIn: [Vibha Kashyap](https://www.linkedin.com/in/vibha-kashyap-b89517313)
-
----
 
 ## 📄 License
 

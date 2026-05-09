@@ -32,7 +32,6 @@
 <!-- Quick Links with Icons -->
 <p align="center">
   <a href="#-features">Features</a> •
-  <a href="#-demo">Demo</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-documentation">Documentation</a> •
   <a href="#-contributing">Contributing</a> •
@@ -57,7 +56,6 @@
 
 - [🌟 Overview](#-overview)
 - [✨ Features](#-features)
-- [🎥 Demo](#-demo)
 - [🏗️ Architecture](#️-architecture)
 - [🚀 Quick Start](#-quick-start)
 - [📚 Documentation](#-documentation)
@@ -258,71 +256,6 @@ NirnayAI transforms tender evaluation through:
 </td>
 </tr>
 </table>
-
----
-
-<div align="center">
-
-## 🎥 Demo
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=EC4899&center=true&vCenter=true&width=600&lines=See+NirnayAI+in+Action" alt="Demo" />
-
-</div>
-
-### 🖼️ Screenshots
-
-<details>
-<summary>📸 Click to view screenshots</summary>
-
-<br/>
-
-<div align="center">
-
-#### 🏠 Landing Page
-*Beautiful, modern landing page with clear call-to-action*
-
----
-
-#### 📊 Dashboard
-*Comprehensive overview of all tenders and evaluations*
-
----
-
-#### 📄 Tender Upload
-*Drag-and-drop interface for easy document upload*
-
----
-
-#### ✅ Criteria Review
-*AI-extracted criteria with edit capabilities*
-
----
-
-#### ⚖️ Evaluation Results
-*Clear, color-coded evaluation outcomes*
-
----
-
-#### 🔍 Review Queue
-*Human review interface for edge cases*
-
----
-
-#### 📈 Reports
-*Professional PDF and Excel reports*
-
----
-
-#### 🌐 Multilingual Interface
-*Seamless language switching*
-
-</div>
-
-</details>
-
-### 🎬 Video Walkthrough
-
-> 📹 *Coming soon: Full video walkthrough of NirnayAI features*
 
 ---
 

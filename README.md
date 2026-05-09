@@ -1,5 +1,5 @@
 <div align="center"> 
-
+ 
 <!-- Animated Title with Gradient -->
 <h1>
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=48&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&multiline=true&width=800&height=100&lines=🏛️+NirnayAI;AI-Powered+Tender+Evaluation+System" alt="NirnayAI" />

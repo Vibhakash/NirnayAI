@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
 
 <!-- Animated Title with Gradient -->
@@ -478,89 +477,6 @@ sequenceDiagram
 
 <details open>
 <summary><b>Step 1: Clone Repository</b></summary>
-=======
-# NirnayAI 🏛️
-
-**AI-Powered Tender Evaluation System for Government Procurement**
-
-NirnayAI is an intelligent procurement evaluation platform that leverages AI to streamline the tender evaluation process. It automatically extracts criteria from tender documents, evaluates bidder submissions, and provides transparent, auditable decision-making for government procurement officers.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.111.0-green.svg)
-![React](https://img.shields.io/badge/React-18.3.1-blue.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue.svg)
-
-## 🌟 Features
-
-### 🤖 AI-Powered Intelligence
-- **Automated Criteria Extraction**: AI reads tender documents and automatically identifies evaluation criteria
-- **Smart Document Analysis**: Supports PDF, DOCX, and image formats with OCR capabilities
-- **Intelligent Evaluation**: AI evaluates bidder submissions against tender requirements
-- **Confidence Scoring**: Built-in confidence bands to flag uncertain decisions for human review
-
-### 📋 Procurement Management
-- **Tender Management**: Create, track, and manage tenders through their entire lifecycle
-- **Bidder Submissions**: Upload and organize bidder documents with version tracking
-- **Multi-Criteria Evaluation**: Handle numerical, date-based, certification, and general criteria types
-- **Comparative Analysis**: Side-by-side comparison of multiple bidders
-
-### 👥 Human-in-the-Loop
-- **Review Queue**: Dedicated interface for reviewing AI decisions that need human verification
-- **Override System**: Procurement officers can override AI decisions with justification tracking
-- **Audit Trail**: Complete logging of all actions, decisions, and overrides
-
-### 🌐 Multilingual Support
-- **3 Languages**: Full support for English, Hindi, and Kannada
-- **AI-Powered Translation**: Dynamic translation of AI reasoning and evaluation results
-- **Localized Interface**: Complete UI translation for government officials
-
-### 📊 Reporting & Compliance
-- **Automated Reports**: Generate PDF and Excel reports for tender evaluations
-- **Digital Sign-off**: Formal approval and sign-off workflow
-- **Audit Logs**: Complete activity tracking for compliance and transparency
-- **Export Capabilities**: JSON, PDF, and Excel export formats
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Frontend (React + TypeScript)            │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  Dashboard   │  │  Evaluation  │  │  Reports     │      │
-│  │  & Tenders   │  │  Interface   │  │  & Audit     │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                  ┌─────────▼─────────┐
-                  │   REST API        │
-                  │   (FastAPI)       │
-                  └─────────┬─────────┘
-                            │
-         ┌──────────────────┼──────────────────┐
-         │                  │                  │
-    ┌────▼─────┐    ┌──────▼──────┐    ┌─────▼─────┐
-    │ Document │    │  AI Engine  │    │  MongoDB  │
-    │ Parsers  │    │  (Mistral)  │    │  Atlas    │
-    │  + OCR   │    │             │    │           │
-    └──────────┘    └─────────────┘    └───────────┘
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Python 3.9+** ([Download](https://www.python.org/downloads/))
-- **Node.js 18+** and npm ([Download](https://nodejs.org/))
-- **MongoDB Atlas Account** (Free tier available at [mongodb.com/atlas](https://www.mongodb.com/atlas))
-- **Mistral AI API Key** (Get from [console.mistral.ai](https://console.mistral.ai))
-
-### Installation
-
-#### 1. Clone the Repository
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577
 
 ```bash
 git clone https://github.com/yourusername/NirnayAI.git

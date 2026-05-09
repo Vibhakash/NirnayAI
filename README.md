@@ -1,8 +1,12 @@
 <div align="center">
 
 <!-- Animated Title -->
+
 <h1>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=48&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=900&height=100&lines=NirnayAI;AI-Powered+Tender+Evaluation+System" alt="NirnayAI" />
+  <img 
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=42&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&multiline=true&width=900&height=140&lines=NirnayAI;AI-Powered+Tender;Evaluation+System" 
+    alt="NirnayAI" 
+  />
 </h1>
 
 <!-- Subtitle -->

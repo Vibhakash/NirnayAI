@@ -29,18 +29,6 @@
   <img src="https://img.shields.io/badge/Mistral-AI-FF6B6B?style=for-the-badge" alt="Mistral AI"/>
 </p>
 
-<!-- GitHub Badges -->
-<p align="center">
-  <img src="https://img.shields.io/github/license/VibKashyap/NirnayAI?style=flat-square&color=6366F1" alt="License"/>
-  
-  <img src="https://img.shields.io/github/stars/VibKashyap/NirnayAI?style=flat-square&color=8B5CF6" alt="Stars"/>
-  
-  <img src="https://img.shields.io/github/forks/VibKashyap/NirnayAI?style=flat-square&color=EC4899" alt="Forks"/>
-  
-  <img src="https://img.shields.io/github/issues/VibKashyap/NirnayAI?style=flat-square&color=F59E0B" alt="Issues"/>
-  
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/>
-</p>
 
 <!-- Navigation Links -->
 <p align="center">
@@ -429,7 +417,6 @@ git clone https://github.com/yourusername/NirnayAI.git
 cd NirnayAI
 ```
 
-<<<<<<< HEAD
 </details>
 
 <details open>
@@ -437,53 +424,28 @@ cd NirnayAI
 
 ```bash
 # Navigate to backend
-=======
-#### 2. Backend Setup
-
-```bash
-# Navigate to backend directory
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577
 cd backend
 
 # Create virtual environment
 python -m venv venv
 
 # Activate virtual environment
-<<<<<<< HEAD
 # Windows: venv\Scripts\activate
 # macOS/Linux: source venv/bin/activate
-=======
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577
 
 # Install dependencies
 pip install -r requirements.txt
 
-<<<<<<< HEAD
 # Configure environment
 cp ../.env.example .env
 # Edit .env with your API keys and credentials
 ```
 
 **Generate SECRET_KEY:**
-=======
-# Copy environment template
-cp ../.env.example .env
-
-# Edit .env file with your credentials
-# Required: MISTRAL_API_KEY, MONGODB_URL, SECRET_KEY
-```
-
-**Generate your SECRET_KEY:**
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577
 ```bash
 python -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-<<<<<<< HEAD
 </details>
 
 <details open>
@@ -516,45 +478,11 @@ python seed_database.py
 
 <details open>
 <summary><b>Step 5: Launch Application</b></summary>
-=======
-#### 3. Frontend Setup
-
-```bash
-# Open a new terminal and navigate to frontend
-cd frontend
-
-# Install dependencies
-npm install
-
-# The frontend will automatically connect to backend at http://localhost:8000
-```
-
-#### 4. Database Setup
-
-```bash
-# Navigate to mock-data directory
-cd ../mock-data
-
-# Seed the database with demo data
-python seed_database.py
-```
-
-This creates a demo user:
-- **Username**: `officer`
-- **Password**: `Officer@123`
-
-#### 5. Start the Application
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577
 
 **Terminal 1 - Backend:**
 ```bash
 cd backend
-<<<<<<< HEAD
 uvicorn app.main:app --reload
-=======
-# Make sure virtual environment is activated
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577
 ```
 
 **Terminal 2 - Frontend:**
@@ -563,7 +491,6 @@ cd frontend
 npm run dev
 ```
 
-<<<<<<< HEAD
 </details>
 
 ### 🎉 Success!
@@ -592,14 +519,6 @@ npm run dev
 <tr>
 <td align="center" width="25%">
 
-### 📖 User Guide
-[View Guide](docs/USER_GUIDE.md)
-
-Complete walkthrough of all features and workflows
-
-</td>
-<td align="center" width="25%">
-
 ### 🔧 Setup Guide
 [View Guide](SETUP_INSTRUCTIONS.md)
 
@@ -615,15 +534,6 @@ Manual testing scenarios and test cases
 
 </td>
 <td align="center" width="25%">
-
-### 📡 API Reference
-[View Docs](http://localhost:8000/docs)
-
-Interactive API documentation (FastAPI Swagger)
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -1333,129 +1243,8 @@ npm install
 - [ ] 🎓 **Training Portal** - Built-in user training modules
 - [ ] 🌍 **Multi-Tenancy** - Support multiple organizations
 
-> 💡 **Want to contribute?** Check out our [Contributing Guide](#-contributing)!
 
 ---
-
-<div align="center">
-
-## 🤝 Contributing
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=10B981&center=true&vCenter=true&width=600&lines=We+Love+Contributions!" alt="Contributing" />
-
-</div>
-
-We welcome contributions from the community! Whether it's bug fixes, new features, or documentation improvements, your help is appreciated.
-
-### 🌟 How to Contribute
-
-1. **Fork the Repository**
-   ```bash
-   # Click the 'Fork' button at the top right
-   ```
-
-2. **Clone Your Fork**
-   ```bash
-   git clone https://github.com/yourusername/NirnayAI.git
-   cd NirnayAI
-   ```
-
-3. **Create a Branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   # or
-   git checkout -b fix/bug-fix
-   ```
-
-4. **Make Your Changes**
-   - Write clean, documented code
-   - Follow existing code style
-   - Add tests if applicable
-
-5. **Commit Your Changes**
-   ```bash
-   git commit -m "Add: Amazing new feature"
-   # Use prefixes: Add, Fix, Update, Remove, Refactor
-   ```
-
-6. **Push to Your Fork**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-
-7. **Create Pull Request**
-   - Go to original repository
-   - Click "New Pull Request"
-   - Describe your changes
-
-### 📋 Contribution Guidelines
-
-<details>
-<summary><b>Code Standards</b></summary>
-
-- Follow PEP 8 for Python code
-- Use ESLint rules for TypeScript/React
-- Write meaningful commit messages
-- Add comments for complex logic
-- Update documentation
-
-</details>
-
-<details>
-<summary><b>Commit Message Format</b></summary>
-
-```
-Type: Brief description
-
-Detailed explanation (optional)
-
-Related issues: #123, #456
-```
-
-**Types:**
-- `Add:` New feature
-- `Fix:` Bug fix
-- `Update:` Improvements
-- `Remove:` Deletion
-- `Refactor:` Code restructuring
-- `Docs:` Documentation
-
-</details>
-
-<details>
-<summary><b>Pull Request Checklist</b></summary>
-
-- [ ] Code follows project style
-- [ ] Tests added/updated
-- [ ] Documentation updated
-- [ ] No breaking changes (or documented)
-- [ ] Self-review completed
-- [ ] Descriptive PR title
-
-</details>
-
-### 🐛 Reporting Bugs
-
-Found a bug? Please create an issue with:
-
-- 🔍 Clear description
-- 📝 Steps to reproduce
-- 💻 Expected vs actual behavior
-- 🖼️ Screenshots (if applicable)
-- 🌐 Environment details (OS, Browser, Python version)
-
-### 💡 Suggesting Features
-
-Have an idea? We'd love to hear it! Create an issue with:
-
-- 💭 Feature description
-- 🎯 Use case / benefit
-- 🔧 Possible implementation
-- 📊 Priority level
-
----
-
-<div align="center">
 
 ## 📄 License
 
@@ -1559,80 +1348,18 @@ Amazing UI library
 <tr>
 <td>
 
-**Project Maintainer:** [Your Name]
+**Project Maintainer:** [Vibha Kashyap]
 
-📧 **Email:** your.email@example.com
+📧 **Email:** kashyapvib@gmail.com
 
-🐙 **GitHub:** [@yourusername](https://github.com/yourusername)
+🐙 **GitHub:** [Vibhakash](https://github.com/Vibhakash)
 
-🐦 **Twitter:** [@yourhandle](https://twitter.com/yourhandle)
-
-💼 **LinkedIn:** [Your Profile](https://linkedin.com/in/yourprofile)
+💼 **LinkedIn:** [Vibha Kashyap](www.linkedin.com/in/vibha-kashyap-b89517313)
 
 </td>
 </tr>
 </table>
 
-### 🔗 Important Links
-
-<p align="center">
-  <a href="https://github.com/yourusername/NirnayAI">
-    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub"/>
-  </a>
-  <a href="https://github.com/yourusername/NirnayAI/issues">
-    <img src="https://img.shields.io/badge/Issues-Report%20Bug-red?style=for-the-badge&logo=github" alt="Issues"/>
-  </a>
-  <a href="https://github.com/yourusername/NirnayAI/discussions">
-    <img src="https://img.shields.io/badge/Discussions-Join-blue?style=for-the-badge&logo=github" alt="Discussions"/>
-  </a>
-  <a href="http://localhost:8000/docs">
-    <img src="https://img.shields.io/badge/API-Documentation-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="API Docs"/>
-  </a>
-</p>
-
----
-
-<div align="center">
-
-## ⭐ Show Your Support
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=F59E0B&center=true&vCenter=true&width=600&lines=If+you+find+NirnayAI+helpful;Give+it+a+⭐+on+GitHub!" alt="Support" />
-
-<br/>
-<br/>
-
-**Found this project useful?**
-
-Give it a ⭐ to show your support and help others discover it!
-
-<br/>
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/nirnayai?style=social)](https://github.com/yourusername/nirnayai/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/nirnayai?style=social)](https://github.com/yourusername/nirnayai/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/yourusername/nirnayai?style=social)](https://github.com/yourusername/nirnayai/watchers)
-
-</div>
-
----
-
-<div align="center">
-
-### 📊 GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical)
-
-### 🏆 Contributors
-
-<a href="https://github.com/yourusername/nirnayai/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=yourusername/nirnayai" />
-</a>
-
-<br/>
-<br/>
-
----
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=EC4899&center=true&vCenter=true&width=800&lines=Built+with+❤️+for+Transparent+Government+Procurement;Making+Public+Procurement+Fair+%26+Efficient;Powered+by+AI+•+Driven+by+Transparency" alt="Footer" />
 
 <br/>
 
@@ -1643,289 +1370,3 @@ Give it a ⭐ to show your support and help others discover it!
 <sub>⚖️ Transparent • 🤖 Intelligent • ⚡ Efficient</sub>
 
 </div>
-=======
-#### 6. Access the Application
-
-- **Frontend**: [http://localhost:5173](http://localhost:5173)
-- **Backend API**: [http://localhost:8000](http://localhost:8000)
-- **API Documentation**: [http://localhost:8000/docs](http://localhost:8000/docs)
-
-## 📖 Usage Guide
-
-### 1. Login
-Use the demo credentials or create a new account:
-- Username: `officer`
-- Password: `Officer@123`
-
-### 2. Upload a Tender
-1. Navigate to **Tenders** → **Upload New Tender**
-2. Fill in tender details (Name, ID, Deadline)
-3. Upload tender document (PDF, DOCX, or Image)
-4. Wait for AI to extract criteria
-
-### 3. Review Extracted Criteria
-1. Review AI-extracted evaluation criteria
-2. Edit, delete, or add new criteria as needed
-3. Click **Confirm These Requirements**
-
-### 4. Add Bidders
-1. Open the tender
-2. Click **Add Company**
-3. Enter company name and upload their submission documents
-4. Repeat for all bidders
-
-### 5. Run Evaluation
-1. Navigate to **Evaluate**
-2. Click **Start Evaluation**
-3. AI will evaluate each bidder against criteria
-4. Results show: Eligible, Ineligible, or Needs Review
-
-### 6. Review Decisions
-1. Go to **Review Queue** for items needing human verification
-2. Review AI reasoning and evidence
-3. Accept or override AI decision with justification
-
-### 7. Generate Reports
-1. Navigate to **Reports**
-2. Download PDF or Excel report
-3. Complete formal sign-off when ready
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Key configuration options in `.env`:
-
-```bash
-# Mistral AI
-MISTRAL_API_KEY=your_api_key_here
-MISTRAL_MODEL_LARGE=mistral-large-latest
-MISTRAL_MODEL_SMALL=mistral-small-latest
-
-# MongoDB
-MONGODB_URL=mongodb+srv://username:password@cluster.mongodb.net/
-DB_NAME=nirnayai
-
-# Security
-SECRET_KEY=your_64_char_hex_string
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=480
-
-# OCR
-OCR_LANGUAGES=en,hi
-OCR_CONFIDENCE_THRESHOLD=0.70
-OCR_USE_GPU=false
-
-# AI Thresholds
-LLM_CONFIDENCE_THRESHOLD=0.75
-
-# File Upload
-MAX_FILE_SIZE_MB=50
-```
-
-### Adjusting AI Confidence Thresholds
-
-- **OCR_CONFIDENCE_THRESHOLD** (0.0-1.0): Lower values accept more OCR results, higher values flag more for review
-- **LLM_CONFIDENCE_THRESHOLD** (0.0-1.0): Controls when AI evaluation results are marked as "Needs Review"
-
-## 🧪 Testing
-
-### Manual Testing
-
-Follow the [MANUAL_TESTING_GUIDE.md](MANUAL_TESTING_GUIDE.md) for comprehensive testing scenarios.
-
-### API Testing
-
-Use the interactive API documentation:
-```
-http://localhost:8000/docs
-```
-
-### Sample Files
-
-The `sample-files/` directory contains:
-- `00_Sample_Tender_SmartCity.docx` - Sample tender document
-- `01_Bidder_TechNova_Eligible.docx` - Sample eligible bidder
-- `02_Bidder_UrbanBuild_UnderReview.docx` - Sample borderline bidder
-
-## 📁 Project Structure
-
-```
-NirnayAI/
-├── backend/                    # FastAPI backend
-│   ├── app/
-│   │   ├── ai/                # AI evaluation engine
-│   │   ├── auth/              # Authentication & authorization
-│   │   ├── bidders/           # Bidder management
-│   │   ├── documents/         # Document parsing & OCR
-│   │   ├── evaluation/        # Evaluation logic
-│   │   ├── reports/           # Report generation
-│   │   ├── review/            # Human review system
-│   │   ├── tenders/           # Tender management
-│   │   ├── audit/             # Audit logging
-│   │   ├── i18n/              # Internationalization
-│   │   └── main.py            # Application entry point
-│   └── requirements.txt
-├── frontend/                   # React + TypeScript frontend
-│   ├── src/
-│   │   ├── components/        # Reusable UI components
-│   │   ├── pages/             # Page components
-│   │   ├── services/          # API services
-│   │   ├── stores/            # State management (Zustand)
-│   │   └── i18n/              # Translations (en, hi, kn)
-│   └── package.json
-├── mock-data/                  # Database seeding scripts
-├── sample-files/               # Sample documents for testing
-├── .env.example               # Environment template
-└── README.md
-```
-
-## 🛠️ Technology Stack
-
-### Backend
-- **Framework**: FastAPI 0.111.0
-- **Database**: MongoDB with Motor (async driver)
-- **AI/ML**: Mistral AI API
-- **OCR**: EasyOCR
-- **Document Parsing**: PyMuPDF, python-docx
-- **Authentication**: JWT (python-jose)
-- **Reports**: ReportLab (PDF), OpenPyXL (Excel)
-
-### Frontend
-- **Framework**: React 18.3.1 with TypeScript
-- **Routing**: React Router v6
-- **State Management**: Zustand
-- **Styling**: TailwindCSS
-- **Animations**: Framer Motion
-- **HTTP Client**: Axios
-- **Internationalization**: i18next, react-i18next
-- **Icons**: Lucide React
-
-## 🔒 Security Features
-
-- **JWT Authentication**: Secure token-based authentication
-- **Password Hashing**: bcrypt for secure password storage
-- **CORS Protection**: Configurable CORS origins
-- **File Upload Validation**: Type and size restrictions
-- **Audit Logging**: Complete activity tracking
-- **Environment Isolation**: Sensitive data in environment variables
-
-## 🌍 Internationalization
-
-NirnayAI supports three languages:
-
-- **English (en)**: Default language
-- **Hindi (hi)**: हिंदी
-- **Kannada (kn)**: ಕನ್ನಡ
-
-Translation coverage:
-- ✅ Complete UI translation
-- ✅ AI-powered dynamic content translation
-- ✅ Error messages and notifications
-- ✅ Report generation in selected language
-
-## 📊 Database Schema
-
-### Key Collections
-
-- **users**: User accounts and authentication
-- **tenders**: Tender documents and metadata
-- **criteria**: Extracted evaluation criteria
-- **bidders**: Bidder information and submissions
-- **evaluations**: AI evaluation results
-- **audit_logs**: Complete activity audit trail
-- **jobs**: Background job tracking
-
-## 🐛 Troubleshooting
-
-### Backend Issues
-
-**Problem**: `ModuleNotFoundError`
-```bash
-# Ensure virtual environment is activated and dependencies installed
-pip install -r requirements.txt
-```
-
-**Problem**: MongoDB connection fails
-```bash
-# Verify MongoDB Atlas connection string in .env
-# Ensure IP whitelist includes your IP (or 0.0.0.0/0 for testing)
-# Check username/password are correctly URL-encoded
-```
-
-**Problem**: Mistral AI API errors
-```bash
-# Verify API key is valid
-# Check account has available credits
-# Ensure model names are correct in .env
-```
-
-### Frontend Issues
-
-**Problem**: CORS errors
-```bash
-# Verify CORS_ORIGINS in backend .env matches frontend URL
-CORS_ORIGINS=http://localhost:5173
-```
-
-**Problem**: API connection refused
-```bash
-# Ensure backend is running on port 8000
-# Check firewall settings
-# Verify api.ts has correct API_BASE_URL
-```
-
-### OCR Issues
-
-**Problem**: EasyOCR models not downloading
-```bash
-# Ensure internet connection
-# Models (~500MB) download on first OCR use
-# Check ~/.EasyOCR directory has write permissions
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Mistral AI** for providing the AI evaluation engine
-- **MongoDB** for the flexible database platform
-- **FastAPI** for the high-performance backend framework
-- **React Team** for the amazing frontend library
-- **EasyOCR** for optical character recognition capabilities
-
-## 📧 Contact & Support
-
-For questions, issues, or suggestions:
-
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/NirnayAI/issues)
-- **Documentation**: See [MANUAL_TESTING_GUIDE.md](MANUAL_TESTING_GUIDE.md)
-- **API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
-
-## 🗺️ Roadmap
-
-- [ ] Add support for more document formats (Excel, CSV)
-- [ ] Implement real-time collaboration features
-- [ ] Add email notifications for evaluation events
-- [ ] Enhanced analytics and reporting dashboard
-- [ ] Mobile app support
-- [ ] Integration with government e-procurement portals
-- [ ] Advanced AI models for specialized evaluation types
-- [ ] Blockchain-based audit trail for immutable records
-
----
-
-**Built with ❤️ for transparent and efficient government procurement**
->>>>>>> ff45efa52ed3bf567462f0386247c2b3f8e37577

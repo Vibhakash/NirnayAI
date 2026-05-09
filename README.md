@@ -1,35 +1,45 @@
 <div align="center">
 
-<!-- Animated Title with Gradient -->
+<!-- Animated Title -->
 <h1>
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=48&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&multiline=true&width=800&height=100&lines=🏛️+NirnayAI;AI-Powered+Tender+Evaluation+System" alt="NirnayAI" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=48&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=900&height=100&lines=NirnayAI;AI-Powered+Tender+Evaluation+System" alt="NirnayAI" />
 </h1>
 
-<!-- Subtitle with Typing Effect -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=22&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&width=800&lines=Revolutionizing+Government+Procurement;Transparent+•+Intelligent+•+Efficient" alt="Subtitle" />
+<!-- Subtitle -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=400&size=22&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&width=900&lines=Revolutionizing+Government+Procurement;Transparent+%E2%80%A2+Intelligent+%E2%80%A2+Efficient" alt="Subtitle" />
 
 <br/>
 <br/>
 
-<!-- Badges with Gradient Colors -->
+<!-- Tech Stack Badges -->
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0.111.0-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  
   <img src="https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  
   <img src="https://img.shields.io/badge/TypeScript-5.3.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  
   <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
-  <img src="https://img.shields.io/badge/Mistral-AI-FF6B6B?style=for-the-badge&logo=ai&logoColor=white" alt="Mistral AI"/>
+  
+  <img src="https://img.shields.io/badge/Mistral-AI-FF6B6B?style=for-the-badge" alt="Mistral AI"/>
 </p>
 
+<!-- GitHub Badges -->
 <p align="center">
-  <img src="https://img.shields.io/github/license/yourusername/nirnayai?style=flat-square&color=6366F1" alt="License"/>
-  <img src="https://img.shields.io/github/stars/yourusername/nirnayai?style=flat-square&color=8B5CF6" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/yourusername/nirnayai?style=flat-square&color=EC4899" alt="Forks"/>
-  <img src="https://img.shields.io/github/issues/yourusername/nirnayai?style=flat-square&color=F59E0B" alt="Issues"/>
+  <img src="https://img.shields.io/github/license/VibKashyap/NirnayAI?style=flat-square&color=6366F1" alt="License"/>
+  
+  <img src="https://img.shields.io/github/stars/VibKashyap/NirnayAI?style=flat-square&color=8B5CF6" alt="Stars"/>
+  
+  <img src="https://img.shields.io/github/forks/VibKashyap/NirnayAI?style=flat-square&color=EC4899" alt="Forks"/>
+  
+  <img src="https://img.shields.io/github/issues/VibKashyap/NirnayAI?style=flat-square&color=F59E0B" alt="Issues"/>
+  
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/>
 </p>
 
-<!-- Quick Links with Icons -->
+<!-- Navigation Links -->
 <p align="center">
   <a href="#-features">Features</a> •
   <a href="#-quick-start">Quick Start</a> •
@@ -42,7 +52,7 @@
 
 <!-- Animated Description -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2000&pause=500&color=6B7280&center=true&vCenter=true&multiline=true&width=900&height=80&lines=An+intelligent+procurement+platform+that+leverages+AI+to+streamline+tender+evaluations;Automatically+extract+criteria+•+Evaluate+bidders+•+Generate+reports;Built+for+transparency+and+efficiency+in+government+procurement" alt="Description" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2500&pause=800&color=6B7280&center=true&vCenter=true&width=1000&height=80&lines=AI-powered+platform+for+smart+tender+evaluation;Automatically+extract+criteria+%E2%80%A2+Evaluate+bidders+%E2%80%A2+Generate+reports;Built+for+transparency%2C+speed%2C+and+efficiency+in+government+procurement" alt="Description" />
 </p>
 
 </div>
